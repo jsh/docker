@@ -7,4 +7,4 @@ RUN mkdir /var/run/sshd
 EXPOSE 22
 
 ENV NEW_USER jeffrey_haemer_gmail_com
-adduser --gcos "Jeffrey S. Haemer" $NEW_USER
+RUN adduser --gcos "Jeffrey S. Haemer" $NEW_USER
