@@ -7,4 +7,5 @@ RUN mkdir /var/run/sshd
 EXPOSE 22
 
 ENV NEW_USER jeffrey_haemer_gmail_com
-RUN adduser --gcos "Jeffrey S. Haemer" $NEW_USER
+RUN adduser --disabled-password --gecos 'Jeffrey S. Haemer' $NEW_USER
+RUN echo "$NEW_USER:$NEW_USER" | chpasswd
