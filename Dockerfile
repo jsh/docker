@@ -6,5 +6,5 @@ RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 EXPOSE 22
 
-ENV NEW_USER=jeffrey_haemer_gmail_com
+ENV NEW_USER jeffrey_haemer_gmail_com
 adduser --gcos "Jeffrey S. Haemer" $NEW_USER
