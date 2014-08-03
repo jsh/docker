@@ -12,7 +12,6 @@ RUN adduser --disabled-password --gecos 'Jeffrey S. Haemer' $NEW_USER
 RUN echo "$NEW_USER:foo" | chpasswd
 ADD ssh /home/$NEW_USER/.ssh/
 RUN chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.ssh
-RUN /usr/sbin/sshd -D &
 
 # default command to run if there's nothing on the command line.
 CMD [ "/bin/bash" ]
