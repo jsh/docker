@@ -6,7 +6,7 @@ RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 EXPOSE 22
 
-# create a user to ssh in as
+# create a user so I can ssh in
 ENV NEW_USER jeffrey_haemer_gmail_com
 RUN adduser --disabled-password --gecos 'Jeffrey S. Haemer' $NEW_USER
 RUN echo "$NEW_USER:foo" | chpasswd
@@ -15,3 +15,6 @@ RUN chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.ssh
 
 # default command to run if there's nothing on the command line.
 CMD [ "/bin/bash" ]
+
+# add a useful package
+RUN apt-get install -y git
