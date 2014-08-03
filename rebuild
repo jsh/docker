@@ -1,0 +1,8 @@
+#!/bin/bash -u
+
+pushd docker
+  git commit -am"Update"
+  git push
+popd
+docker build -t="jhaemer/sshd:v1" git@github.com:jsh/docker
+#docker build -t="jhaemer/sshd:v1" .

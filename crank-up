@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+if docker ps -a | grep -q sshd; then
+  docker stop sshd
+  docker rm sshd
+fi
+
+#docker run -p 127.0.0.1:2222:22 --name sshd -i -t jhaemer/sshd:v1 /bin/bash
+docker run -d -p 127.0.0.1:2222:22 --name sshd jhaemer/sshd:v1 /usr/sbin/sshd -D
