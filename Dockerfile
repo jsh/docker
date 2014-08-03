@@ -8,8 +8,7 @@ EXPOSE 22
 
 # create a user so I can ssh in
 ENV NEW_USER jeffrey_haemer_gmail_com
-RUN adduser --disabled-password --gecos 'Jeffrey S. Haemer' $NEW_USER
-RUN echo "$NEW_USER:foo" | chpasswd
+RUN useradd -m -c 'Jeff Haemer' $NEW_USER
 ADD ssh /home/$NEW_USER/.ssh/
 RUN chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.ssh
 
