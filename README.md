@@ -1,4 +1,4 @@
-docker
+dockerbook
 ======
 
 Experimenting with Docker
