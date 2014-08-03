@@ -4,5 +4,5 @@ pushd docker
   git commit -am"Update"
   git push
 popd
-docker build -t="jhaemer/dockerbook:v1" git@github.com:jsh/docker
-#docker build -t="jhaemer/dockerbook:v1" .
+docker build -t="goyishekop/dockerbook:v1" git@github.com:jsh/docker
+#docker build -t="goyishekop/dockerbook:v1" .
