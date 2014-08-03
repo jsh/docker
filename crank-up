@@ -6,4 +6,4 @@ if docker ps -a | grep -q fez; then
 fi
 
 #docker run -p 127.0.0.1:2222:22 --name fez -i -t goyishekop/dockerbook:v1 /bin/bash
-docker run -d -p 127.0.0.1:2222:22 --name fez -i -t goyishekop/dockerbook:v1 /usr/sbin/sshd -D
+docker run -d -p 127.0.0.1:2222:22 --name fez -i -t goyishekop/dockerbook /usr/sbin/sshd -D
