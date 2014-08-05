@@ -1,4 +1,4 @@
-# this is a comment
+# set up initial container
 FROM ubuntu:14.04
 MAINTAINER Jeffrey S. Haemer "jeffrey.haemer+docker@gmail.com"
 RUN apt-get -yqq update
@@ -8,7 +8,7 @@ EXPOSE 22
 
 # create a user so I can ssh in
 ENV NEW_USER jeffrey_haemer_gmail_com
-RUN useradd -m -c 'Jeff Haemer' $NEW_USER
+RUN useradd -m -c 'Jeff Haemer' -s '/bin/bash' $NEW_USER
 ADD ssh /home/$NEW_USER/.ssh/
 RUN chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.ssh
 
