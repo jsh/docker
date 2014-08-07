@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+if [ $# = 0 ]; then
+  args="$(docker images -q)"
+  [ "$args" ] || exit 0
+  set $args
+fi
+
+docker stop "$@"
+docker rm "$@"
