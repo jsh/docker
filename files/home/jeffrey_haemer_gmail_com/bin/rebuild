@@ -1,0 +1,9 @@
+#!/bin/bash -u
+
+pushd docker
+  git commit -am"Update"
+  git push
+popd
+#docker build -t="goyishekop/dockerbook:v1" git@github.com:jsh/docker
+docker build -t="goyishekop/dockerbook:v1" file:///home/jeffrey_haemer_gmail_com/docker.git
+#docker build -t="goyishekop/dockerbook:v1" .

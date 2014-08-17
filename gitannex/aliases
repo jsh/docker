@@ -1,0 +1,2 @@
+alias db='rmcont; docker build -t jhaemer/git .'
+alias dr='docker run -tip 2222:22 -v ~/docker/files/home/jeffrey_haemer_gmail_com:/home/jeffrey_haemer_gmail_com jhaemer/git '
