@@ -4,10 +4,11 @@ MAINTAINER Jeffrey S. Haemer "jeffrey.haemer+docker@gmail.com"
 
 ENV packages openssh-server git-annex
 RUN apt-get -yqq update; \
-    apt-get -yq install $packages;
+    apt-get -yqq install $packages;
 
 # create a user so I can ssh in
 #ENV NEW_USER jhaemer
+ADD etc/sudoers.d/ /etc/sudoers.d
 ENV NEW_USER jeffrey_haemer_gmail_com
 RUN mkdir /var/run/sshd; \
     groupadd -g 1001 $NEW_USER; \
@@ -16,4 +17,4 @@ RUN mkdir /var/run/sshd; \
 # default command to run if there's nothing on the command line.
 
 EXPOSE 22
-CMD [ "/bin/bash" ]
+CMD [ "/usr/sbin/sshd", "-D" ]
